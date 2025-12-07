@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio – Mohamed Zeba</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #f5f5f7;
+      color: #1f2933;
+      line-height: 1.6;
+    }
+    header {
+      background: #111827;
+      color: #f9fafb;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 0.4rem 0;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    section {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.4rem;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .tag {
+      padding: 0.15rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      font-size: 0.8rem;
+      background: #f9fafb;
+    }
+    .project {
+      margin-bottom: 1rem;
+    }
+    .project h3 {
+      margin: 0 0 0.2rem;
+      font-size: 1.05rem;
+    }
+    .project small {
+      color: #6b7280;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .contact-list p {
+      margin: 0.25rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mohamed Zeba</h1>
+    <p>Économiste – Statisticien | Finances publiques, data science & économétrie</p>
+    <p><a href="https://github.com/Mohamed-ZEBA" target="_blank" style="color:#93c5fd;">github.com/Mohamed-ZEBA</a></p>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>À propos</h2>
+      <p>
+        Étudiant en Master Statistique pour l'Évaluation et la Prévision (SEP) à l'Université de Reims Champagne-Ardenne,
+        avec une formation préalable en économie du développement et finances publiques. Je m'intéresse à la
+        fiscalité, aux ressources naturelles, à la transition énergétique et à l'analyse de données appliquée aux
+        politiques publiques.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Compétences</h2>
+      <h3>Techniques</h3>
+      <div class="tag-list">
+        <span class="tag">R</span>
+        <span class="tag">Python</span>
+        <span class="tag">Stata</span>
+        <span class="tag">SAS</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Git / GitHub / GitLab</span>
+        <span class="tag">BigQuery</span>
+        <span class="tag">Économétrie</span>
+        <span class="tag">Modèles de panel</span>
+        <span class="tag">GMM</span>
+        <span class="tag">Différence en différences</span>
+      </div>
+
+      <h3 style="margin-top:1rem;">Thématiques</h3>
+      <div class="tag-list">
+        <span class="tag">Finances publiques</span>
+        <span class="tag">Fiscalité minière & environnementale</span>
+        <span class="tag">Ressources naturelles</span>
+        <span class="tag">Transition énergétique</span>
+        <span class="tag">Évaluation de politiques publiques</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projets</h2>
+
+      <div class="project">
+        <h3>Outil Big Data & ETL sur GCP – SNCF (projet académique)</h3>
+        <small>Python • BigQuery • Cloud Storage • Git</small>
+        <p>
+          Conception d'un pipeline de traitement de données (ETL) pour la SNCF sur Google Cloud Platform :
+          ingestion, nettoyage et préparation de données volumineuses pour l'analyse.
+        </p>
+        <p>
+          Code source : 
+          <a href="https://github.com/Mohamed-ZEBA/Outil_big_data_project" target="_blank">
+            github.com/Mohamed-ZEBA/Outil_big_data_project
+          </a>
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Régression en grande dimension</h3>
+        <small>R • Régression pénalisée • Machine learning</small>
+        <p>
+          Projet de cours en régression en grande dimension : mise en œuvre de méthodes de sélection de variables
+          (LASSO, Ridge, Elastic Net) et évaluation des performances prédictives sur données réelles.
+        </p>
+        <p>
+          Code source :
+          <a href="https://github.com/Mohamed-ZEBA/reg_grand_dim" target="_blank">
+            github.com/Mohamed-ZEBA/reg_grand_dim
+          </a>
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Management de projets digitaux</h3>
+        <small>Gestion de projet • Collaboration • Git</small>
+        <p>
+          Projet de groupe sur la conception et le pilotage d'un produit numérique, incluant la structuration du
+          backlog, la gestion des versions et la documentation technique.
+        </p>
+        <p>
+          Code source :
+          <a href="https://github.com/Mohamed-ZEBA/man-projet-digit1" target="_blank">
+            github.com/Mohamed-ZEBA/man-projet-digit1
+          </a>
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Fiscalité environnementale et ressources naturelles (travaux académiques)</h3>
+        <small>Finances publiques • Fiscalité minière • Analyse de politiques</small>
+        <p>
+          Travaux de recherche et de synthèse sur la fiscalité environnementale dans les pays de l'UEMOA,
+          l'évaluation des régimes fiscaux miniers et pétroliers et les enjeux de transition énergétique dans
+          les pays en développement.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Expériences & formation</h2>
+      <p><strong>Master Statistique pour l'Évaluation et la Prévision (SEP)</strong> – Université de Reims Champagne-Ardenne</p>
+      <p><strong>Master Économie du développement – Finances publiques</strong></p>
+      <p>Participation à des projets sur la fiscalité des télécoms, la fiscalité minière, les dépenses fiscales et la mobilisation des ressources internes.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-list">
+        <p>Email : <a href="mailto:mohamed.zeba@example.com">mohamed.zeba@example.com</a></p>
+        <p>GitHub : <a href="https://github.com/Mohamed-ZEBA" target="_blank">github.com/Mohamed-ZEBA</a></p>
+        <!-- <p>LinkedIn : <a href="#" target="_blank">Mon profil LinkedIn</a></p> -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Mohamed Zeba – Portfolio
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
