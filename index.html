@@ -5,389 +5,365 @@
   <title>Portfolio – Mohamed ZEBA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg: #0f172a;
-      --bg-soft: #111827;
-      --card: #020617;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
+    :root{
+      /* Palette claire */
+      --bg: #f6f7fb;
+      --bg-soft: #eef2ff;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.12);
+      --shadow: 0 14px 30px rgba(2, 6, 23, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    *{ box-sizing:border-box; }
 
-    body {
-      margin: 0;
+    body{
+      margin:0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1d283a, #020617 50%);
+      background:
+        radial-gradient(circle at top left, #eef2ff, transparent 55%),
+        radial-gradient(circle at top right, #e0f2fe, transparent 55%),
+        linear-gradient(#ffffff, #f6f7fb);
       color: var(--text);
       min-height: 100vh;
     }
 
-    .page {
+    .page{
       max-width: 1080px;
       margin: 0 auto;
       padding: 1.5rem;
     }
 
-    header {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      align-items: center;
-      justify-content: space-between;
-      background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(15,23,42,0.8));
-      border-radius: 1.5rem;
-      padding: 1.5rem;
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      gap:1.25rem;
+      align-items:center;
+      justify-content:space-between;
+      background: linear-gradient(135deg, #ffffff, #f1f5ff);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
       border: 1px solid var(--border);
-      box-shadow: 0 25px 50px rgba(15,23,42,0.8);
-      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.25rem;
     }
 
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
+    .profile{
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      min-width: 280px;
     }
 
-    .profile-photo {
-      width: 96px;
-      height: 96px;
+    .profile-photo{
+      width: 92px;
+      height: 92px;
       border-radius: 999px;
-      overflow: hidden;
+      overflow:hidden;
       border: 2px solid var(--accent);
-      box-shadow: 0 0 0 4px rgba(56,189,248,0.2);
-      flex-shrink: 0;
+      box-shadow: 0 0 0 5px var(--accent-soft);
+      flex-shrink:0;
+      background: #fff;
+    }
+    .profile-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .profile-text h1{
+      margin:0;
+      font-size:1.65rem;
+      letter-spacing: 0.2px;
     }
-
-    .profile-text h1 {
-      margin: 0;
-      font-size: 1.7rem;
-    }
-
-    .profile-text p {
-      margin: 0.2rem 0;
+    .profile-text p{
+      margin:0.25rem 0 0;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size:0.98rem;
+      line-height:1.35;
     }
 
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.4rem;
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.4rem;
+      margin-top:0.55rem;
+    }
+    .chip{
+      font-size:0.78rem;
+      padding:0.18rem 0.65rem;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      color: var(--muted);
+      box-shadow: 0 6px 16px rgba(2,6,23,0.04);
     }
 
-    .chip {
-      font-size: 0.75rem;
-      padding: 0.15rem 0.65rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      background: rgba(15,23,42,0.9);
+    .contact{
+      display:flex;
+      flex-direction:column;
+      gap:0.25rem;
+      font-size:0.92rem;
+      text-align:right;
       color: var(--muted);
     }
-
-    .contact {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      font-size: 0.9rem;
-      text-align: right;
-    }
-
-    .contact a {
+    .contact a{
       color: var(--accent);
-      text-decoration: none;
+      text-decoration:none;
+      font-weight: 600;
     }
-    .contact a:hover {
-      text-decoration: underline;
-    }
+    .contact a:hover{ text-decoration:underline; }
 
     /* Tabs */
-
-    .tabs {
-      margin-top: 1rem;
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+    .tabs{
+      margin-top: 0.75rem;
+      display:flex;
+      gap:0.55rem;
+      flex-wrap:wrap;
     }
 
-    .tab-btn {
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.7);
+    .tab-btn{
+      border:1px solid var(--border);
+      background:#ffffff;
       color: var(--muted);
       border-radius: 999px;
-      padding: 0.5rem 0.95rem;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: background 0.15s, color 0.15s, border 0.15s, transform 0.1s;
+      padding:0.55rem 0.95rem;
+      font-size:0.92rem;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:0.45rem;
+      transition: background 0.15s, color 0.15s, border 0.15s, transform 0.08s;
+      box-shadow: 0 8px 18px rgba(2,6,23,0.04);
     }
 
-    .tab-btn span.icon {
-      font-size: 1rem;
-    }
+    .tab-btn span.icon{ font-size:1rem; }
 
-    .tab-btn.active {
+    .tab-btn.active{
       background: var(--accent-soft);
       color: var(--accent);
-      border-color: rgba(56,189,248,0.5);
+      border-color: rgba(37,99,235,0.35);
       transform: translateY(-1px);
     }
 
-    .tab-content {
-      margin-top: 1.5rem;
-      background: radial-gradient(circle at top left, rgba(15,23,42,0.9), #020617 60%);
-      border-radius: 1.5rem;
-      padding: 1.5rem;
-      border: 1px solid var(--border);
-      box-shadow: 0 20px 40px rgba(15,23,42,0.8);
+    .tab-content{
+      margin-top: 1.1rem;
+      background: #ffffff;
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
     }
 
-    .tab-panel {
-      display: none;
-      animation: fadeIn 0.2s ease-out;
+    .tab-panel{
+      display:none;
+      animation: fadeIn 0.18s ease-out;
+    }
+    .tab-panel.active{ display:block; }
+
+    @keyframes fadeIn{
+      from{ opacity:0; transform: translateY(4px); }
+      to{ opacity:1; transform: translateY(0); }
     }
 
-    .tab-panel.active {
-      display: block;
+    h2{
+      margin:0 0 0.8rem;
+      font-size:1.28rem;
+      letter-spacing: 0.2px;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(4px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    p{ font-size:0.98rem; color: var(--text); line-height:1.65; }
 
-    h2 {
-      margin-top: 0;
-      font-size: 1.3rem;
-      margin-bottom: 0.75rem;
-    }
-
-    p {
-      font-size: 0.95rem;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.25rem;
-    }
-
-    .pill {
-      font-size: 0.8rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.5);
+    ul{
+      margin: 0.5rem 0 0;
+      padding-left: 1.1rem;
       color: var(--muted);
     }
 
-    .two-cols {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 1.2rem;
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.45rem;
+      margin-top: 0.35rem;
     }
 
-    .card {
+    .pill{
+      font-size:0.82rem;
+      padding:0.22rem 0.7rem;
+      border-radius:999px;
+      background:#ffffff;
+      border:1px solid var(--border);
+      color: var(--muted);
+      box-shadow: 0 6px 14px rgba(2,6,23,0.04);
+    }
+
+    .two-cols{
+      display:grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.1rem;
+    }
+
+    .card{
       border-radius: 1rem;
       border: 1px solid var(--border);
-      background: rgba(15,23,42,0.85);
+      background: #ffffff;
       padding: 1rem;
       margin-bottom: 0.9rem;
+      box-shadow: 0 10px 22px rgba(2,6,23,0.05);
     }
 
-    .card h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1.05rem;
+    .card h3{
+      margin:0 0 0.25rem;
+      font-size:1.06rem;
     }
 
-    .card small {
+    .card small{
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size:0.84rem;
     }
 
-    .card p {
-      margin-top: 0.4rem;
-      margin-bottom: 0.3rem;
+    .card p{
+      margin-top:0.45rem;
+      margin-bottom:0.35rem;
+      color: var(--text);
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.4rem;
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.35rem;
+      margin-top:0.45rem;
     }
 
-    .tag {
-      font-size: 0.75rem;
-      padding: 0.18rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(55,65,81,0.9);
+    .tag{
+      font-size:0.76rem;
+      padding:0.18rem 0.6rem;
+      border-radius:999px;
+      background:#f8fafc;
+      border:1px solid var(--border);
       color: var(--muted);
     }
 
-    .project-link {
-      font-size: 0.85rem;
+    .project-link{
+      font-size:0.9rem;
+      margin-top: 0.35rem;
     }
-
-    .project-link a {
+    .project-link a{
       color: var(--accent);
-      text-decoration: none;
+      text-decoration:none;
+      font-weight: 600;
     }
+    .project-link a:hover{ text-decoration:underline; }
 
-    .project-link a:hover {
-      text-decoration: underline;
-    }
-
-    .timeline {
-      border-left: 1px solid var(--border);
+    .timeline{
+      border-left: 2px solid var(--border);
       padding-left: 0.9rem;
       margin-left: 0.3rem;
     }
 
-    .timeline-item {
-      margin-bottom: 0.9rem;
-      position: relative;
+    .timeline-item{
+      margin-bottom: 0.95rem;
+      position:relative;
     }
 
-    .timeline-item::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
+    .timeline-item::before{
+      content:"";
+      width:10px;
+      height:10px;
+      border-radius:999px;
       background: var(--accent);
-      position: absolute;
-      left: -0.95rem;
-      top: 0.3rem;
+      position:absolute;
+      left: -1.05rem;
+      top: 0.32rem;
+      box-shadow: 0 0 0 4px var(--accent-soft);
     }
 
-    .timeline-item h4 {
-      margin: 0;
-      font-size: 0.95rem;
+    .timeline-item h4{
+      margin:0;
+      font-size:0.98rem;
     }
 
-    .timeline-item small {
+    .timeline-item small{
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size:0.85rem;
     }
 
-    .contact-grid {
-      display: grid;
-      gap: 0.6rem;
-      font-size: 0.95rem;
+    .contact-grid{
+      display:grid;
+      gap: 0.7rem;
+      font-size: 0.98rem;
+      color: var(--text);
     }
 
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
+    footer{
+      text-align:center;
+      font-size:0.85rem;
       color: var(--muted);
-      margin-top: 1.5rem;
+      margin-top: 1.2rem;
       padding-bottom: 0.5rem;
     }
 
-    @media (max-width: 720px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .contact {
-        text-align: left;
-        align-items: flex-start;
-      }
-      .two-cols {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    @media (max-width: 720px){
+      header{ flex-direction:column; align-items:flex-start; }
+      .contact{ text-align:left; align-items:flex-start; }
+      .two-cols{ grid-template-columns: minmax(0, 1fr); }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header>
       <div class="profile">
         <div class="profile-photo">
-          <!-- Mets ici le nom de ton fichier photo -->
+          <!-- Mets ici le nom exact de ton fichier photo -->
           <img src="photo_mohamed.jpg" alt="Photo de profil de Mohamed ZEBA" />
         </div>
         <div class="profile-text">
           <h1>Mohamed ZEBA</h1>
-          <p>Économiste – Statisticien | Finances publiques, économie des ressources naturelles & data science</p>
+          <p>Économiste – Statisticien | Finances publiques, économie du climat & data science</p>
           <div class="chips">
             <span class="chip">Master SEP – URCA</span>
             <span class="chip">Économie du développement – CERDI</span>
             <span class="chip">R · Python · Stata · SQL</span>
-            <span class="chip">Finances publiques & ressources naturelles</span>
+            <span class="chip">Économétrie & évaluation</span>
           </div>
         </div>
       </div>
+
       <div class="contact">
         <span>📍 Reims, France</span>
         <span>📧 <a href="mailto:mohzebaa@gmail.com">mohzebaa@gmail.com</a></span>
-        <span>🐙 <a href="https://github.com/Mohamed-ZEBA" target="_blank">github.com/Mohamed-ZEBA</a></span>
+        <span>🐙 <a href="https://github.com/Mohamed-ZEBA" target="_blank" rel="noreferrer">github.com/Mohamed-ZEBA</a></span>
         <!-- Remplace '#' par ton vrai lien LinkedIn -->
-        <span>🔗 <a href="#" target="_blank">LinkedIn</a></span>
+        <span>🔗 <a href="#" target="_blank" rel="noreferrer">LinkedIn</a></span>
       </div>
     </header>
 
     <!-- Onglets -->
     <div class="tabs">
-      <button class="tab-btn active" data-tab="about">
-        <span class="icon">👤</span> À propos
-      </button>
-      <button class="tab-btn" data-tab="skills">
-        <span class="icon">📊</span> Compétences
-      </button>
-      <button class="tab-btn" data-tab="projects">
-        <span class="icon">📁</span> Projets
-      </button>
-      <button class="tab-btn" data-tab="cv">
-        <span class="icon">🎓</span> Parcours
-      </button>
-      <button class="tab-btn" data-tab="contact">
-        <span class="icon">✉️</span> Contact
-      </button>
+      <button class="tab-btn active" data-tab="about"><span class="icon">👤</span> À propos</button>
+      <button class="tab-btn" data-tab="skills"><span class="icon">📊</span> Compétences</button>
+      <button class="tab-btn" data-tab="projects"><span class="icon">📁</span> Projets</button>
+      <button class="tab-btn" data-tab="cv"><span class="icon">🎓</span> Parcours</button>
+      <button class="tab-btn" data-tab="contact"><span class="icon">✉️</span> Contact</button>
     </div>
 
-    <!-- Contenu des onglets -->
+    <!-- Contenu -->
     <div class="tab-content">
 
       <!-- À propos -->
       <section id="tab-about" class="tab-panel active">
         <h2>À propos</h2>
         <p>
-          Double compétences en économie et en Data science <strong> </strong> à l’Université de Reims Champagne-Ardenne,
-          avec une formation préalable en <strong>économie du développement et finances publiques</strong> au CERDI.
-          Je m’intéresse particulièrement aux liens entre <strong>finances publiques, économie du climat, ressources naturelles
-          et data science</strong>.
-        </p>
-        <p>
-          Mes centres d’intérêt et mes travaux portent principalement sur les interactions entre
-          <strong>finances publiques, économie du climat, ressources naturelles et analyse de données</strong>,
-          avec une attention particulière portée aux enjeux de <strong>transition énergétique</strong>
-          et d’<strong>évaluation des politiques publiques</strong>.
-       </p>
-          À travers mes projets académiques et mes expériences à la FERDI et au CERDI, je cherche à
-          <strong>mobiliser l’économétrie appliquée et l’analyse de données</strong> pour éclairer les décisions de politique publique.
+          Je développe une double compétence en <strong>économie</strong> et en <strong>data science</strong> (Master SEP – URCA),
+          après une formation au <strong>CERDI</strong> en économie du développement et finances publiques.
+          Je m’intéresse aux liens entre <strong>finances publiques</strong>, <strong>économie du climat</strong>,
+          <strong>ressources naturelles</strong> et <strong>analyse de données</strong>.
         </p>
       </section>
 
@@ -403,8 +379,9 @@
               <span class="pill">Effets fixes</span>
               <span class="pill">DiD avancées</span>
               <span class="pill">Séries temporelles</span>
-              <span class="pill">Modèles logit / multinomiaux</span>
+              <span class="pill">Logit / multinomial</span>
             </div>
+
             <h3 style="margin-top:1rem;">Data science & big data</h3>
             <div class="pill-row">
               <span class="pill">R</span>
@@ -414,9 +391,10 @@
               <span class="pill">SAS</span>
               <span class="pill">BigQuery</span>
               <span class="pill">Spark / Hadoop (bases)</span>
-              <span class="pill">Git / GitHub / GitLab</span>
+              <span class="pill">Git (GitHub/GitLab)</span>
             </div>
           </div>
+
           <div>
             <h3>Domaines thématiques</h3>
             <div class="pill-row">
@@ -429,6 +407,7 @@
               <span class="pill">Politiques publiques</span>
               <span class="pill">Télécoms & développement</span>
             </div>
+
             <h3 style="margin-top:1rem;">Langues & outils</h3>
             <div class="pill-row">
               <span class="pill">Français (natif)</span>
@@ -447,23 +426,20 @@
         <h2>Projets</h2>
 
         <div class="card">
-          <h3>Outil Big Data & ETL sur Google Cloud – SNCF (projet académique)</h3>
+          <h3>Outil Big Data & ETL sur Google Cloud – SNCF</h3>
           <small>Python · BigQuery · Cloud Storage · Git</small>
           <p>
-            Conception d’un pipeline de type ETL sur Google Cloud Platform pour traiter des données volumineuses de la SNCF :
-            ingestion, nettoyage, agrégation et préparation des données pour l’analyse.
+            Pipeline ETL sur GCP : ingestion, nettoyage, agrégation et chargement vers BigQuery pour l’analyse.
           </p>
           <ul>
-            <li>Automatisation des étapes de transformation et de chargement vers BigQuery.</li>
-            <li>Gestion de données multi-sources et structuration pour la visualisation et le reporting.</li>
+            <li>Automatisation des transformations et du chargement vers BigQuery.</li>
+            <li>Structuration multi-sources pour reporting et exploration.</li>
           </ul>
           <div class="tags">
-            <span class="tag">ETL</span>
-            <span class="tag">Data engineering</span>
-            <span class="tag">Google Cloud</span>
+            <span class="tag">ETL</span><span class="tag">GCP</span><span class="tag">BigQuery</span>
           </div>
           <p class="project-link">
-            Code : <a href="https://github.com/Mohamed-ZEBA/Outil_big_data_project" target="_blank">github.com/Mohamed-ZEBA/Outil_big_data_project</a>
+            Code : <a href="https://github.com/Mohamed-ZEBA/Outil_big_data_project" target="_blank" rel="noreferrer">Outil_big_data_project</a>
           </p>
         </div>
 
@@ -471,38 +447,24 @@
           <h3>Régression en grande dimension</h3>
           <small>R · LASSO / Ridge · Machine learning</small>
           <p>
-            Projet de régression en grande dimension avec sélection de variables sur données réelles.
-            Comparaison de plusieurs méthodes de régularisation et évaluation de leurs performances prédictives.
+            Sélection de variables (LASSO, Ridge, Elastic Net) et évaluation des performances prédictives.
           </p>
-          <ul>
-            <li>Mise en œuvre de LASSO, Ridge et Elastic Net.</li>
-            <li>Validation croisée, choix de pénalisation, diagnostic des modèles.</li>
-          </ul>
           <div class="tags">
-            <span class="tag">LASSO</span>
-            <span class="tag">Elastic Net</span>
-            <span class="tag">Modèles pénalisés</span>
+            <span class="tag">LASSO</span><span class="tag">Elastic Net</span><span class="tag">CV</span>
           </div>
           <p class="project-link">
-            Code : <a href="https://github.com/Mohamed-ZEBA/reg_grand_dim" target="_blank">github.com/Mohamed-ZEBA/reg_grand_dim</a>
+            Code : <a href="https://github.com/Mohamed-ZEBA/reg_grand_dim" target="_blank" rel="noreferrer">reg_grand_dim</a>
           </p>
         </div>
 
         <div class="card">
-          <h3>Fiscalité environnementale & ressources naturelles (travaux de recherche)</h3>
-          <small>Finances publiques · Fiscalité minière · Économie du climat</small>
+          <h3>Fiscalité environnementale & ressources naturelles</h3>
+          <small>Finances publiques · Fiscalité minière · Climat</small>
           <p>
-            Travaux menés au CERDI et à la FERDI sur la fiscalité minière, les dépenses fiscales et la fiscalité environnementale
-            dans les pays de l’UEMOA, avec un focus sur la transition énergétique et les minéraux critiques.
+            Travaux CERDI/FERDI : analyse de régimes fiscaux, bases de données sectorielles et notes d’appui à la décision.
           </p>
-          <ul>
-            <li>Mise à jour et analyse de bases de données fiscales sectorielles.</li>
-            <li>Rédaction de notes d’analyse, synthèses de littérature et recommandations de politique publique.</li>
-          </ul>
           <div class="tags">
-            <span class="tag">Fiscalité minière</span>
-            <span class="tag">Transition énergétique</span>
-            <span class="tag">Politiques publiques</span>
+            <span class="tag">Fiscalité minière</span><span class="tag">Transition énergétique</span><span class="tag">UEMOA</span>
           </div>
         </div>
 
@@ -510,17 +472,10 @@
           <h3>Scoring de défaut de paiement bancaire</h3>
           <small>Python · Classification · Scoring</small>
           <p>
-            Modélisation du risque de défaut sur un portefeuille de crédits via des modèles supervisés : régression logistique,
-            arbres de décision et forêts aléatoires.
+            Modèles supervisés (logit, arbres, forêts) pour prédire le risque de défaut — métriques AUC/précision/rappel.
           </p>
-          <ul>
-            <li>Préparation des données, encodage des variables, gestion du déséquilibre de classes.</li>
-            <li>Comparaison des modèles selon l’AUC, la précision, le rappel.</li>
-          </ul>
           <div class="tags">
-            <span class="tag">Scoring</span>
-            <span class="tag">Risque de crédit</span>
-            <span class="tag">Machine learning</span>
+            <span class="tag">Scoring</span><span class="tag">Risque de crédit</span><span class="tag">ML</span>
           </div>
         </div>
 
@@ -528,13 +483,10 @@
           <h3>Prédiction des commandes de champagne</h3>
           <small>Python · Séries temporelles · SARIMA</small>
           <p>
-            Modélisation et prévision des commandes de champagne à partir de données historiques, avec des modèles SARIMA
-            et analyse de la saisonnalité.
+            Prévisions de commandes avec analyse de saisonnalité et modèles SARIMA.
           </p>
           <div class="tags">
-            <span class="tag">Séries temporelles</span>
-            <span class="tag">SARIMA</span>
-            <span class="tag">Prévision</span>
+            <span class="tag">SARIMA</span><span class="tag">Forecast</span><span class="tag">Time series</span>
           </div>
         </div>
 
@@ -542,12 +494,10 @@
           <h3>Genre et productivité agricole en Champagne</h3>
           <small>R · Économétrie micro · Logit / multinomial</small>
           <p>
-            Étude économétrique des liens entre genre, pratiques agricoles et productivité à partir de données d’enquête.
+            Étude des déterminants de productivité à partir de données d’enquête.
           </p>
           <div class="tags">
-            <span class="tag">Microéconométrie</span>
-            <span class="tag">Genre</span>
-            <span class="tag">Agriculture</span>
+            <span class="tag">Microéco</span><span class="tag">Genre</span><span class="tag">Enquête</span>
           </div>
         </div>
       </section>
@@ -560,34 +510,30 @@
             <h3>Formation</h3>
             <div class="timeline">
               <div class="timeline-item">
-                <h4>Master Statistique pour l’Évaluation et la Prévision (SEP)</h4>
-                <small>2024 – 2026 · Université de Reims Champagne-Ardenne</small>
-                <p>Économétrie avancée, séries temporelles, big data, machine learning, programmation (R, Python, SQL).</p>
+                <h4>Master SEP – URCA</h4>
+                <small>2024 – 2026</small>
+                <p>Économétrie avancée, séries temporelles, big data, machine learning, R/Python/SQL.</p>
               </div>
               <div class="timeline-item">
-                <h4>Master Économie du Développement – Finances Publiques</h4>
-                <small>2022 – 2024 · CERDI – Université Clermont Auvergne</small>
-                <p>Macroéconomie, fiscalité, ressources naturelles, économétrie (panel et temporelle), politiques publiques.</p>
+                <h4>Master Économie du Développement – CERDI</h4>
+                <small>2022 – 2024</small>
+                <p>Finances publiques, fiscalité, ressources naturelles, économétrie panel et temporelle.</p>
               </div>
             </div>
           </div>
+
           <div>
             <h3>Expériences</h3>
             <div class="timeline">
               <div class="timeline-item">
                 <h4>Assistant de recherche – FERDI</h4>
-                <small>2024 · Clermont-Ferrand</small>
-                <p>
-                  Mise à jour de bases de données fiscales minières, analyses économiques et fiscales, participation à des travaux
-                  sur climat–économie et transition énergétique.
-                </p>
+                <small>2024</small>
+                <p>Base fiscalité minière, analyses économiques/fiscales, travaux climat–économie et transition énergétique.</p>
               </div>
               <div class="timeline-item">
                 <h4>Assistant de recherche – CERDI</h4>
-                <small>2023 · Clermont-Ferrand</small>
-                <p>
-                  Analyse de projets miniers, extraction de données macro-sectorielles, note sur la fiscalité minière française.
-                </p>
+                <small>2023</small>
+                <p>Analyse projets miniers, extraction de données, note sur la fiscalité minière française.</p>
               </div>
             </div>
           </div>
@@ -598,26 +544,13 @@
       <section id="tab-contact" class="tab-panel">
         <h2>Contact</h2>
         <div class="contact-grid">
-          <div>
-            <strong>Email</strong><br />
-            <a href="mailto:mohzebaa@gmail.com">mohzebaa@gmail.com</a>
-          </div>
-          <div>
-            <strong>GitHub</strong><br />
-            <a href="https://github.com/Mohamed-ZEBA" target="_blank">github.com/Mohamed-ZEBA</a>
-          </div>
-          <div>
-            <strong>Localisation</strong><br />
-            Reims, France
-          </div>
-          <div>
-            <strong>Disponibilité</strong><br />
-            Ouvert à des opportunités en recherche, data, économie du climat et finances publiques.
-          </div>
+          <div><strong>Email</strong><br /><a href="mailto:mohzebaa@gmail.com">mohzebaa@gmail.com</a></div>
+          <div><strong>GitHub</strong><br /><a href="https://github.com/Mohamed-ZEBA" target="_blank" rel="noreferrer">github.com/Mohamed-ZEBA</a></div>
+          <div><strong>Localisation</strong><br />Reims, France</div>
+          <div><strong>Disponibilité</strong><br />Ouvert à des opportunités (recherche, data, climat, finances publiques).</div>
         </div>
-        <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted);">
-          N’hésitez pas à me contacter pour des <strong>projets de recherche, analyses quantitatives, stages ou collaborations</strong>
-          autour des thèmes : finances publiques, économie du climat, ressources naturelles et data science.
+        <p style="margin-top:1rem;font-size:0.95rem;color:var(--muted);">
+          Tu peux me contacter pour des projets, stages ou collaborations en économie appliquée et analyse de données.
         </p>
       </section>
     </div>
@@ -628,10 +561,8 @@
   </div>
 
   <script>
-    // Mise à jour de l'année dans le footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Gestion des onglets
     const buttons = document.querySelectorAll('.tab-btn');
     const panels = document.querySelectorAll('.tab-panel');
 
